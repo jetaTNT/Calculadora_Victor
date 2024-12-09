@@ -4,16 +4,32 @@ import java.util.Scanner;
 
 public class Calculadora {
 
-    public static Double sumar(Double a, Double b) {
+    public static double sumar(double a, double b) {
         return a + b;
     }
 
-    public static Double restar(Double a, Double b) {
+    public static double restar(double a, double b) {
         return a - b;
     }
 
-    public static Double multiplicar(Double a, Double b) {
+    public static double multiplicar(double a, double b) {
         return a * b;
+    }
+
+    public static double dividir(double a, double b) {
+        if (b == 0) {
+            System.out.println("Error: División entre cero no permitida.");
+            return 0;
+        }
+        return a / b;
+    }
+
+    public static double modulo(double a, double b) {
+        if (b == 0) {
+            System.out.println("Error: División entre cero no permitida.");
+            return 0;
+        }
+        return a * a;
     }
 
     public static void main(String[] args) {
@@ -30,6 +46,8 @@ public class Calculadora {
         System.out.println("1. Sumar");
         System.out.println("2. Restar");
         System.out.println("3. Multiplicar");
+        System.out.println("4. Dividir");
+        System.out.println("5. Módulo");
         System.out.print("Opción: ");
         int opcion = scanner.nextInt();
 
@@ -48,6 +66,14 @@ public class Calculadora {
                 resultado = multiplicar(num1, num2);
                 System.out.println("El resultado de la multiplicación es: " + resultado);
                 break;
+            case 4:
+                resultado = dividir(num1, num2);
+                System.out.println("El resultado de la división es: " + resultado);
+                break;
+            case 5:
+                resultado = modulo(num1, num2);
+                System.out.println("El resultado del módulo es: " + resultado);
+                break;
             default:
                 System.out.println("Opción no válida.");
         }
@@ -55,4 +81,5 @@ public class Calculadora {
         scanner.close();
     }
 }
+
 
