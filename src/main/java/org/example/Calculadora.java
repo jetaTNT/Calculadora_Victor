@@ -31,6 +31,9 @@ public class Calculadora {
         }
         return a * a;
     }
+        private int porcentaje(double a, double b){
+        return (a * b) / 100;
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -48,6 +51,7 @@ public class Calculadora {
         System.out.println("3. Multiplicar");
         System.out.println("4. Dividir");
         System.out.println("5. Módulo");
+        System.out.println("6. Porcentaje");
         System.out.print("Opción: ");
         int opcion = scanner.nextInt();
 
@@ -73,6 +77,10 @@ public class Calculadora {
             case 5:
                 resultado = modulo(num1, num2);
                 System.out.println("El resultado del módulo es: " + resultado);
+                break;
+            case 6:
+                resultado = porcentaje(num1, num2);
+                System.out.println("El resultado del porcentaje es: " + resultado);
                 break;
             default:
                 System.out.println("Opción no válida.");
